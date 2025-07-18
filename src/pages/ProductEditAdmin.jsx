@@ -28,13 +28,13 @@ export default function ProductEditAdmin({ onEdit }) {
     const fetchLatestProduct = async () => {
       try {
         setLoading(true);
-        const res = await axios.get("http://localhost:3000/products");
+        const res = await axios.get("http://localhost:4000/products");
         const products = res.data;
         if (products.length > 0) {
           const lastProduct = products[products.length - 1];
           setProductId(lastProduct.id);
           const productRes = await axios.get(
-            `http://localhost:3000/products/${lastProduct.id}`
+            `http://localhost:4000/products/${lastProduct.id}`
           );
           const product = productRes.data;
           setBaseInfo({
@@ -79,7 +79,7 @@ export default function ProductEditAdmin({ onEdit }) {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:3000/products/${productId}`
+        `http://localhost:4000/products/${productId}`
       );
       const product = res.data;
       setBaseInfo({
@@ -125,7 +125,7 @@ export default function ProductEditAdmin({ onEdit }) {
     setMessage("");
     try {
       const res = await axios.put(
-        `http://localhost:3000/products/${productId}`,
+        `http://localhost:4000/products/${productId}`,
         {
           ...baseInfo,
           ...filters,

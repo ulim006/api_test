@@ -16,7 +16,7 @@ const RegisterPage = () => {
 
     // GET 요청 = 닉네임 중복 확인
     axios
-      .get("http://localhost:4173/check-username", { params: { username } })
+      .get("http://localhost:4174/check-username", { params: { username } })
       .then((res) => {
         setUsernameAvailable(!res.data.exists);
       })
@@ -36,7 +36,7 @@ const RegisterPage = () => {
 
     // POST 요청 = 회원가입
     axios
-      .post("http://localhost:4173/register", { email, username, password }) //포스트요청을 보내는 구조임! 외우기...
+      .post("http://localhost:4174/register", { email, username, password }) //포스트요청을 보내는 구조임! 외우기...
       .then((res) => {
         if (res.data.success) alert("회원가입 성공!");
         navigate("/login");

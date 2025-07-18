@@ -45,7 +45,7 @@ export default function ProductCreateAdmin({ onCreate }) {
 
     try {
       // Swagger와 동일한 엔드포인트로 수정
-      const res = await axios.post("http://localhost:3000/type", body);
+      const res = await axios.post("http://localhost:4000/type", body);
       setMessage("✅ 상품이 성공적으로 등록되었습니다.");
       if (onCreate) onCreate(res.data);
       setForm({

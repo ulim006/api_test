@@ -10,7 +10,7 @@ export default function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/products")
+      .get("http://localhost:4000/products")
       .then((res) => setProducts(res.data))
       .catch((err) => {
         alert("상품 데이터를 불러오지 못했습니다.");
