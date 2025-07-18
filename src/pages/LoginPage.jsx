@@ -31,7 +31,7 @@ const LoginPage = () => {
         navigate("/"); // ✅ 로그인 성공 시 페이지 이동
       })
       .catch((err) => {
-        alert("로그인 실패");
+        alert("로그인 실패!");
       })
       .finally(() => {
         console.log("Login request finished");
